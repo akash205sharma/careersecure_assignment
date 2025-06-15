@@ -5,9 +5,9 @@ import { useRouter } from "next/navigation"
 import { signIn } from "next-auth/react"
 
 export default function SignUpForm() {
-  const [email, setEmail] = useState("akash.2005@gmail.com")
-  const [name, setName] = useState("Akash")
-  const [password, setPassword] = useState("12345678")
+  const [email, setEmail] = useState("")
+  const [name, setName] = useState("")
+  const [password, setPassword] = useState("")
   const router = useRouter()
 
   const handleSubmit = async (e: React.FormEvent) => {
