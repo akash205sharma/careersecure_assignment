@@ -5,14 +5,14 @@ import React from 'react'
 const Navbar = () => {
     const session = useSession();
     const admin = session.data?.user;
-    if(session){
+    if (session) {
         return (
             <div className='bg-gray-300 h-fit w-full flex justify-between p-5 '>
                 {admin?.name}
-                <button className='cursor-pointer text-red-500'  onClick={ () => {signOut()}}>Logout</button>
+                {session.status==='authenticated' && <button className='cursor-pointer text-red-500' onClick={() => { signOut() }}>Logout</button>}
             </div>
         )
-    }        
+    }
 }
 
 export default Navbar
